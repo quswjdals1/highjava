@@ -1,0 +1,1 @@
+memberSearchIndex = [{"p":"kr.or.ddit.basic","c":"JavaDocTest","l":"method(int, int)","u":"method(int,int)"},{"p":"kr.or.ddit.basic","c":"JavaDocTest","l":"methodAdd(int, int)","u":"methodAdd(int,int)"},{"p":"kr.or.ddit.basic","c":"JavaDocTest","l":"methodSub()"}];updateSearchResults();

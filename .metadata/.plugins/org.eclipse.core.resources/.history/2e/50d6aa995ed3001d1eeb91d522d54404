@@ -1,0 +1,29 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="<%=request.getContextPath() %>/js/jquery-3.6.4.min.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+$(()=>{
+	$.ajax({
+		url : "<%=request.getContextPath()%>/memberList.do",
+		type : "get",
+		dataType : "json",
+		success : function(res){
+			alert("성공")
+		},
+		error : function(xhr){
+			alert("상태: "+xhr.status)
+		}
+	})
+})
+</script>
+</head>
+<body>
+<div id="result"></div>
+</body>
+</html>

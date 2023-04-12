@@ -1,0 +1,18 @@
+package kr.or.ddit.basic.fileupload.service;
+
+import java.util.List;
+
+import kr.or.ddit.vo.FileinfoVO;
+
+public interface IFileinfoService {
+	
+	
+	public int insertFileinfo(FileinfoVO fileinfoVO);
+	
+
+	public List<FileinfoVO> getAllFileinfo();
+	
+
+	public FileinfoVO getFileinfo(Long fileNo);
+	
+}

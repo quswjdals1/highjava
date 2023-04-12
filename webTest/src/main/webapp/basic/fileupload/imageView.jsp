@@ -1,0 +1,23 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+img{
+	width: 150px;
+	height: 150px;
+}
+</style>
+</head>
+<body>
+
+<h3>img태그의 src속성에 servlet으로 이미지 처리하기</h3>
+<img src="<%=request.getContextPath()%>/images/imageSrcView.do?fileno=2">
+<img src="<%=request.getContextPath()%>/images/imageSrcView.do?fileno=3">
+<img src="<%=request.getContextPath()%>/images/imageSrcView.do?fileno=4">
+<img src="<%=request.getContextPath()%>/images/imageSrcView.do?fileno=5">
+</body>
+</html>

@@ -1,0 +1,119 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="<%=request.getContextPath() %>/js/jquery-3.6.4.min.js" type="text/javascript"></script>
+<script type="text/javascript">
+$(()=>{
+	flag=0;
+	$("#dup").on("click",function(){
+		$.ajax({
+			url : "<%=request.getContextPath()%>/dupId.do",
+			type : "get",
+			data:{"id":$("#id").val()},
+			success:function(res){
+				if(res=='0'){
+					alert("중복되지 않습니다.")
+					flag=1;
+				}else{
+					alert("중복된 id입니다.")
+					flag=0;
+				}
+			},
+			error:function(xhr){
+				alert("상태: "+xhr.status)
+			},
+			dataType : "text"
+		})
+	})
+	
+	$("#save").on("click",function(){
+		if(flag==0){
+			alert("비밀번호를 확인하시거나 아이디 중복확인을 해주세요")
+		}
+		if(flag==1||!($("#pw").val()==$("#pwc").val())){
+			$("#form").submit();
+		}
+	})
+	
+})
+</script>
+</head>
+<body>
+<h1>회원정보 입력 폼</h1>
+<form id="form" action="<%=request.getContextPath()%>/memberAdd.do" method="post"
+		enctype="multipart/form-data">
+	<table border="1">
+		<tr>
+			<td>
+				회원id
+			</td>
+			<td>
+				<input type="text" name="id" id="id">
+				<button type="button" id="dup">중복확인</button>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				비밀번호
+			</td>
+			<td>
+				<input type="text" name="pw" id="pw">
+			</td>
+		</tr>
+		<tr>
+			<td>
+				비밀번호 확인
+			</td>
+			<td>
+				<input type="text" name="pwc" id="pwc">
+			</td>
+		</tr>
+		<tr>
+			<td>
+				회원이름
+			</td>
+			<td>
+				<input type="text" name="name">
+			</td>
+		</tr>
+		<tr>
+			<td>
+				전화번호
+			</td>
+			<td>
+				<input type="text" name="tel">
+			</td>
+		</tr>
+		<tr>
+			<td>
+				회원주소
+			</td>
+			<td>
+				<input type="text" name="add">
+			</td>
+		</tr>
+		
+		<tr>
+			<td>
+				프로필 사진
+			</td>
+			<td>
+				<input type="file" name="file">
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2">
+				<input type="button" id="save" value="저장">
+				<input type="button" id="cancle" value="취소">
+				<input type="button" id="back" value="회원목록">
+			</td>
+		</tr>
+	</table>
+</form>
+
+</body>
+</html>

@@ -1,0 +1,36 @@
+package kr.or.ddit.basic.fileupload.controller;
+
+import java.io.IOException;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import kr.or.ddit.basic.fileupload.service.FileinfoServiceImpl;
+import kr.or.ddit.basic.fileupload.service.IFileinfoService;
+import kr.or.ddit.vo.FileinfoVO;
+
+
+@WebServlet("/images/imageSrcView.do")
+public class ImageSrcView extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+       
+
+
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		request.setCharacterEncoding("utf-8");
+		response.setCharacterEncoding("utf-8");
+		
+		//파라미터로 넘어온 파일번호를 구한다.
+		String strfileno = request.getParameter("fileno");
+		Long fileno = Long.parseLong(strfileno);
+		
+		//파일 번호를 이용하여 db에서 해당 파일정보를 가져온다.
+		IFileinfoService service = FileinfoServiceImpl.getInstance();
+		FileinfoVO fvo = service.getFileinfo(fileno);
+		
+		
+	}
+
+}

@@ -1,0 +1,60 @@
+package kr.or.ddit.basic.fileupload.controller;
+
+import java.io.File;
+import java.io.IOException;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.MultipartConfig;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+/*
+	servlet 3.0 이상에서 파일업로드를 하려면 작성하는 서블릿에 @multipartconfig 어노테이션을
+	설정해야 한다.
+	
+	@multipartconfig의 설정값들
+	1. location : 업로드한 파일이 임시적으로 저장될 경로를 지정한다.(기본값: "")
+	2. fileSizeThreshold : 이곳에 지정한 값보다 큰파일이 전송되면 location에 지정한 임시 디렉토리에 저장한다
+							(단위: byte, 기본값: 0(무조건 임시 디렉토리 사용))
+	3. maxFileSize : 1개 파일의 최대 크기(단위: byte, 기본값 : -1L(무제한))
+	4. maxRequestSize : 서버로 전송되는 전체 request데이터의 전체 크기
+*/
+
+@WebServlet("/fileUpload.do")
+@MultipartConfig(
+		fileSizeThreshold = 1024*1024*10, maxFileSize = 1024*1024*30,
+		maxRequestSize = 1024*1024*100
+		)
+public class FileUpload extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		request.setCharacterEncoding("utf-8");
+		response.setCharacterEncoding("utf-8");
+		
+		request.getRequestDispatcher("/basic/fileupload/fileUpload.jsp").forward(request, response);
+	}
+
+
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		request.setCharacterEncoding("utf-8");
+		response.setCharacterEncoding("utf-8");
+		
+		//업로드될 파일 경로 설정
+		String uploadPath = "d:/d_other/uploadFiles";
+		
+		//저장될 폴더가 없으면 새로만든다.
+		File f = new File(uploadPath);
+		
+		if(!f.exists()) {
+			f.mkdirs();
+		}
+		
+		//파일이 아닌 일반데이터는 getParameter()나 getParameterValues로 받는다.
+		String userName = request.getParameter("username");
+		
+		System.out.println("일반파라미터 데이터 username: "+userName);
+	}
+
+}

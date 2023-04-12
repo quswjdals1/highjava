@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
+		<item key="selection" value=""/>
+		<item key="wrap" value="true"/>
+		<item key="casesensitive" value="false"/>
+		<item key="wholeword" value="false"/>
+		<item key="incremental" value="false"/>
+		<item key="isRegEx" value="false"/>
+		<list key="findhistory">
+			<item value="파일크기"/>
+			<item value="getpar"/>
+			<item value="system.ou"/>
+			<item value="uploadpa"/>
+			<item value="fvo"/>
+			<item value="headerva"/>
+			<item value="headerva "/>
+			<item value="size"/>
+			<item value="getfile"/>
+			<item value="&#x09;&#x09;request.getRequestDispatcher(&quot;/basic/fileupload/fileList.jsp&quot;).forward(request, response);"/>
+			<item value="filelist"/>
+			<item value="addr 순"/>
+			<item value="all"/>
+			<item value="update"/>
+			<item value="Addr"/>
+		</list>
+		<list key="replacehistory">
+			<item value="_addr"/>
+			<item value="_tel"/>
+			<item value="_name"/>
+			<item value="_pass"/>
+			<item value="_id"/>
+			<item value="setMem_name"/>
+			<item value="getMem_name"/>
+			<item value="getMem_id"/>
+			<item value="getMem_pass"/>
+			<item value="setMem_pass"/>
+			<item value="setMem_id"/>
+			<item value="sqlSessionFactory"/>
+			<item value=""/>
+			<item value="DBUtil3"/>
+			<item value="bundle.getString"/>
+		</list>
+	</section>
+	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
+		<item key="DIALOG_X_ORIGIN" value="8"/>
+		<item key="DIALOG_Y_ORIGIN" value="173"/>
+		<item key="DIALOG_WIDTH" value="322"/>
+		<item key="DIALOG_HEIGHT" value="391"/>
+		<item key="DIALOG_FONT_NAME" value="1|맑은 고딕|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|맑은 고딕"/>
+	</section>
+</section>

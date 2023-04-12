@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 이 문서는 mybatis에서 처리할 sql문을 작성하는 문서입니다. -->
+<!DOCTYPE mapper
+	PUBLIC "-//mybatis.org//DTD Mapper 3.0/EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+	
+<!-- <mapper>태그의 namespace 속성은 Java소스에서 실행할 SQL문을 호출할 때 같이 사용되는 이름이다. -->
+<mapper namespace="lprod">
+	 <select id="selectLprod" resultType="lprodVo"><!-- select의 결과가 0개든 1개든 여러개든-->
+	 	select * from lprod								<!-- resultType에는 무조건 1개의 타입을 기술 --> 	
+	 </select>
+
+</mapper>
+

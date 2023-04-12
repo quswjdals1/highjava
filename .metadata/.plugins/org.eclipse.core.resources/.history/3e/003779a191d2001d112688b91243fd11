@@ -1,0 +1,55 @@
+package kr.or.ddit.basic.fileupload.controller;
+
+import java.io.File;
+import java.io.IOException;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import kr.or.ddit.basic.fileupload.service.FileinfoServiceImpl;
+import kr.or.ddit.basic.fileupload.service.IFileinfoService;
+import kr.or.ddit.vo.FileinfoVO;
+
+
+@WebServlet("/fileDownload.do")
+public class FileDownload extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+
+
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
+		request.setCharacterEncoding("utf-8");
+		response.setCharacterEncoding("utf-8");
+		
+		//파라미터로 넘어온 파일번호(fileno)를 구한다.
+		String strFileNo = request.getParameter("fileno");
+		int fileNo = Integer.parseInt(strFileNo);
+		
+		//파일번호를 이용하여 db에서 해당 파일에 대한 정보를 가져온다.
+		
+		IFileinfoService service = FileinfoServiceImpl.getInstance();
+		FileinfoVO fvo = service.getFileinfo(fileNo);
+		
+		//업로드된 파일들이 저장된 폴더 설정
+		String uploadPath = "d:/d_other/uploadFiles";
+		
+		File f = new File(uploadPath);
+		
+		if(!f.exists()) {
+			f.mkdirs();
+		}
+		
+		//다운 받을 파일의 정보를 갖는 file객체 생성 ==> 실제 저장된 파일명 지정
+		File downFile = new File(f,fvo.getSave_file_name())
+		
+	}
+
+
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		doGet(request, response);
+	}
+
+}

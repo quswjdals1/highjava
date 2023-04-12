@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy 2 packages to &apos;webTest/res&apos;&#x0D;&#x0A;- Original project: &apos;mybatisjdbcBoardTest&apos;&#x0D;&#x0A;- Destination element: &apos;webTest/res&apos;&#x0D;&#x0A;- Original elements:&#x0D;&#x0A;     mybatisjdbcBoardTest/res/kr.or.ddit.mybatis.config&#x0D;&#x0A;     mybatisjdbcBoardTest/res/kr.or.ddit.mybatis.mapper" description="Copy packages" destination="=webTest/res" element1="/res&lt;kr.or.ddit.mybatis.config" element2="/res&lt;kr.or.ddit.mybatis.mapper" flags="589830" fragments="2" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyPackages" stamp="1680222839373" version="1.0"/>
+</session>

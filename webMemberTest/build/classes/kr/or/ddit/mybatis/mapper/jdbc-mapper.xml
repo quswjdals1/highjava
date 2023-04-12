@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+	PUBLIC "-//mybatis.org//DTD Mapper 3.0/EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+	
+<!-- <mapper>태그의 namespace 속성은 Java소스에서 실행할 SQL문을 호출할 때 같이 사용되는 이름이다. -->
+<mapper namespace="test">
+
+	<select id="selectGreatestId" resultType="Integer">
+		select nvl(max(lprod_id),0) + 1 maxid from lprod
+	</select>
+	
+	<select id="selectIsExistId" parameterType="String" resultType="int">
+		select count(*) from lprod where lprod_gu=#{lprod_gu}
+	</select>
+	
+	<insert id="insertLprod" parameterType="lprodVo">
+		insert into lprod(lprod_id,lprod_gu,lprod_nm) values(#{lprod_id},#{lprod_gu},#{lprod_nm})	
+	</insert>
+</mapper>

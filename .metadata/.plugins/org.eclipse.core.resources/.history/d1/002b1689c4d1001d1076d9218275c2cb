@@ -1,0 +1,27 @@
+package kr.or.ddit.basic.fileupload.service;
+
+import java.util.List;
+
+import kr.or.ddit.vo.FileinfoVO;
+
+public class FileinfoServiceImpl implements IFileinfoService {
+
+	@Override
+	public int insertFileinfo(FileinfoVO fileinfoVO) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public List<FileinfoVO> getAllFileinfo() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public FileinfoVO getFileinfo(int fileNo) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}
